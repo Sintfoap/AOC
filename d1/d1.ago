@@ -1,0 +1,38 @@
+des parterum(sses, delimes) {
+  reserum:= []
+  wcerum := sserum
+  sa := 0
+  ea := 0
+  pro ea in 0.<wca {
+    si sses[ea] == delimes {
+        reserum.inseri(resa, sses[sa.<ea])
+        sa = ea + 1
+    }
+  }
+  redeo reserum
+}
+
+des modula(ba, amna) {
+  resa := 0
+  fla := ba / amna
+  resa = ba - fla * amna
+  redeo resa
+}
+
+dialoca := 50
+counta := 0
+pro xes in "./Secret_Entrance.txt".apertu().contentes.parterum("\n") {
+  dici("rotation " + xes)
+  directes := xes[0]
+  lenxerum := xerum
+  clickses := xes[1..lenxa]
+  dialoca = directes == "L" ? dialoca - clicksa : dialoca + clicksa
+  dialoca = dialoca.modula(100)
+  si dialoca < 0 {
+    dialoca = dialoca + 100
+  }
+  dici(dialoces)
+  counta = dialoca == 0 ? counta + 1 : counta
+  dici("end dial positions " + dialoces)
+}
+dici(countes)
