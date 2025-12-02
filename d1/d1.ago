@@ -1,4 +1,3 @@
-
 des parterum(sses, delimes) {
   reserum:= []
   wcerum := sserum
@@ -26,13 +25,15 @@ pro xes in "./d1.txt".apertu().contentes.parterum("\n") {
   dialoca = directes == "L" ? dialoca - clicksa : dialoca + clicksa
   si dialoca > 99 {
     dialoca = dialoca - 100
-    answera = answera + 1
-  } aluid dialoca < 0 {
+    si dialoca != 0 et odialoca != 0 {
+      answera = answera + 1
+    }
+  } aluid dialoca < 0{
     dialoca = dialoca + 100
-    answera = answera + 1
+    si dialoca != 0 et odialoca != 0 {
+      answera = answera + 1
+    }
   }
-  si dialoca == 0 {
-    answera = answera + 1
-  }
+  answera = dialoca == 0 et odialoca != 0 ? answera + 1 : answera
 }
 dici(answeres)
