@@ -1,4 +1,3 @@
-answera := 0
 
 des parterum(sses, delimes) {
   reserum:= []
@@ -14,25 +13,26 @@ des parterum(sses, delimes) {
   redeo reserum
 }
 
-des modula(ba, amna) {
-  resa := 0
-  fla := ba / amna
-  resa = ba - fla * amna
-  answera = answera + fla
-  redeo resa
-}
-
+answera := 0
 dialoca := 50
-counta := 0
 pro xes in "./d1.txt".apertu().contentes.parterum("\n") {
+  odialoca := dialoca
   directes := xes[0]
   lenxerum := xerum
   clickses := xes[1..lenxa]
+  fla := clicksa / 100
+  clicksa := clicksa - fla * 100
+  answera = answera + (fla >=0 ? fla : -fla)
   dialoca = directes == "L" ? dialoca - clicksa : dialoca + clicksa
-  dialoca = dialoca.modula(100)
+  si dialoca > 99 {
+    dialoca = dialoca - 100
+    answera = answera + 1
+  } aluid dialoca < 0 {
+    dialoca = dialoca + 100
+    answera = answera + 1
+  }
   si dialoca == 0 {
     answera = answera + 1
   }
-  counta = dialoca == 0 ? counta + 1 : counta
 }
-dici(countes)
+dici(answeres)
