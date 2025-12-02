@@ -1,3 +1,5 @@
+answera := 0
+
 des parterum(sses, delimes) {
   reserum:= []
   wcerum := sserum
@@ -16,23 +18,21 @@ des modula(ba, amna) {
   resa := 0
   fla := ba / amna
   resa = ba - fla * amna
+  answera = answera + fla
   redeo resa
 }
 
 dialoca := 50
 counta := 0
-pro xes in "./Secret_Entrance.txt".apertu().contentes.parterum("\n") {
-  dici("rotation " + xes)
+pro xes in "./d1.txt".apertu().contentes.parterum("\n") {
   directes := xes[0]
   lenxerum := xerum
   clickses := xes[1..lenxa]
   dialoca = directes == "L" ? dialoca - clicksa : dialoca + clicksa
   dialoca = dialoca.modula(100)
-  si dialoca < 0 {
-    dialoca = dialoca + 100
+  si dialoca == 0 {
+    answera = answera + 1
   }
-  dici(dialoces)
   counta = dialoca == 0 ? counta + 1 : counta
-  dici("end dial positions " + dialoces)
 }
 dici(countes)
